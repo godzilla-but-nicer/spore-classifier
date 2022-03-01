@@ -8,6 +8,8 @@ mode = sys.argv[1]
 
 if mode == 'sample':
     prot_dir = 'data/sample_proteins'
+elif mode =='ww':
+    prot_dir = 'data/labelled/ww_proteins'
 
 blast_outputs = glob(prot_dir + '/*.txt')
 for bof_path in blast_outputs:
@@ -35,7 +37,7 @@ for bof_path in blast_outputs:
     # now we want to write a new file
     if not os.path.isdir(prot_dir + '/best_hits'):
         os.mkdir(prot_dir + '/best_hits')
-    genome_id = bof_path.split('/')[-1].split('.')[0]
+    genome_id = bof_path.split('/')[-1].split('.txt')[0]
     outfile_path = f'{prot_dir}/best_hits/{genome_id}_best.txt'
     with open(outfile_path, 'w') as outf:
         outf.writelines(filtered_output)

@@ -18,7 +18,7 @@ print(f"Starting BLASTP on {len(sample_faas)} proteomes...")
 overall_start = time.time()
 for faa in sample_faas:
     # get the unique identifier for the MAG
-    id = faa.split('/')[-1].split('.')[0]
+    id = faa.split('/')[-1].split('.faa')[0]
     out_file = prot_dir + '/' + str(id) + '.txt'
 
     # make a directory for the output
@@ -32,6 +32,7 @@ for faa in sample_faas:
     os.system(f'blastp -query {faa} -db {db_path} -out {out_file} -num_threads 4 '
               f'-evalue {ethresh} -outfmt 6 -best_hit_overhang 0.25')
     print(f'\tCompleted in {(time.time() - start_time)} s')
+
 
 overall_end = time.time()
 print(f"Entire sample completed in {(overall_end - overall_start)/60} min")

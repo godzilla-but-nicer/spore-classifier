@@ -4,6 +4,8 @@ data/gems_dna/*
 data/labelled/*
 data/reference_sequences/*
 *.png
+datasets
+*.zip
 
 
 # Byte-compiled / optimized / DLL files
