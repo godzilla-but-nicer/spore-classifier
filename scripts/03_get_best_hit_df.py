@@ -9,12 +9,13 @@ from Bio import SeqIO
 # which data to run on
 mode = sys.argv[1]
 if mode == 'sample':
-    hit_dir = 'data/sample_proteins/best_hits'
-    hit_paths = glob('data/sample_proteins/best_hits/*_best.txt')
+    prot_dir = 'data/sample_proteins'
 elif mode == 'ww':
-    hit_dir = 'data/labelled/ww_proteins/best_hits'
-    hit_paths = glob('data/labelled/ww_proteins/best_hits/*_best.txt')
+    prot_dir = 'data/labelled/ww_proteins'
+elif mode == 'browne':
+    prot_dir = 'data/labelled/browne_proteins'
 
+hit_paths = glob(f"{prot_dir}/best_hits/*_best.txt")
 seq_paths = 'data/reference_sequences/sporulation_sprot.fasta'
 
 # parse the sequence descriptions to get a dict keyed by the first word
@@ -41,4 +42,4 @@ for hp in hit_paths:
             row_list.append(row)
     
 gene_df = pd.DataFrame(row_list)
-gene_df.to_csv(f'{hit_dir}/best_hits.csv', index=False)
+gene_df.to_csv(f'{prot_dir}/best_hits/best_hits.csv', index=False)

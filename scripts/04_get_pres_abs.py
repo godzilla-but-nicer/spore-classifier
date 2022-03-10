@@ -14,6 +14,8 @@ if mode == "sample":
     prot_dir = "data/sample_proteins"
 elif mode == "ww":
     prot_dir = "data/labelled/ww_proteins"
+elif mode == "browne":
+    prot_dir = "data/labelled/browne_proteins"
 
 genes_df = pd.read_csv(prot_dir + '/best_hits/best_hits.csv')
 
@@ -30,6 +32,8 @@ if mode == "sample":
     mat.to_csv('data/summary_data/sporulation_bitscores.csv')
 elif mode == "ww":
     mat.to_csv('data/summary_data/ww_sporulation_bitscores.csv')
+elif mode == "browne":
+    mat.to_csv('data/summary_data/browne_sporulation_bitscores.csv')
 
 
 plt.imshow(mat.values, interpolation='none', cmap='Greys')

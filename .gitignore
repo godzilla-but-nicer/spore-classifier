@@ -1,17 +1,37 @@
+# BIG DATA
 data/gems_proteins/*
 data/sample_proteins/*
 data/gems_dna/*
 data/labelled/*
 data/reference_sequences/*
+
+# figs etc
 *.png
+*.pdf
+
+# commandline tools
 datasets
 *.zip
 
+# not my shit
+scripts/stopwords/
+
+# latex gore
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.run.xml
+*.synctex.gz
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+
+# VS code
+.vscode
 
 # C extensions
 *.so

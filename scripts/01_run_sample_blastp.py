@@ -11,6 +11,9 @@ if mode == 'sample':
     prot_dir = 'data/sample_proteins'
 elif mode == 'ww':
     prot_dir = 'data/labelled/ww_proteins'
+elif mode == 'browne':
+    prot_dir = 'data/labelled/browne_proteins'
+
 db_path = 'data/reference_sequences/sporulation_sprot.fasta'
 sample_faas = glob(prot_dir + '/*.faa')
 
